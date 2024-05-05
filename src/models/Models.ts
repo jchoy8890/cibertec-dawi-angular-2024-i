@@ -1,13 +1,13 @@
 export class Docente {
-     id: number;
+    id: number;
     name: string;
-     lastname: string;
-     email: string;
+    lastName: string;
+    email: string;
 
-    constructor(id: number, name: string, lastname: string, email: string) {
+    constructor(id: number, name: string, lastName: string, email: string) {
         this.id = id;
         this.name = name;
-        this.lastname = lastname;
+        this.lastName = lastName;
         this.email = email;
     }
 }

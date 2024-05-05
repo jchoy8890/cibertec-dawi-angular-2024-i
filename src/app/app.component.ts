@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
     this.httpService = http;
   }
 
-  docentesAPI!: Docente[]
+  docentesAPI: Docente[] = []
   title = 'Cibertec';
   author = "Jonathan Choy";
   flag = true;
@@ -24,8 +24,27 @@ export class AppComponent implements OnInit {
   docente: Docente = new Docente(1, 'Jonathan', 'Choy', 'pjchoyri@cibertec.edu.pe')
   docentes: Docente[] = [this.docente, new Docente(2, 'Juanito', 'Machucafuerte', 'pjmachuca@cibertec.edu.pe')]
 
-  ngOnInit() {
-    this.docentesAPI = this.http.getDocentes()
+  // ngOnInit() {
+  // this.http.getDocentes().subscribe(
+  //   data =>{
+  //     this.docentesAPI = data
+  //   },
+  //   err =>{
+  //     console.log(err)
+  //   },
+  //   ()=>{
+  //     console.log("Complete")
+  //   }
+  // )
+
+  // }
+
+  ngOnInit(): void {
+    this.http.getDocentes().subscribe(
+      data => {
+        this.docentesAPI = data
+      }
+    )
   }
 
 

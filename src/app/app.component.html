@@ -11,7 +11,7 @@
 <div *ngIf="docente !== null">
     <h3>{{docente.id}}</h3>
     <h4>{{docente.name}}</h4>
-    <h4>{{docente.lastname}}</h4>
+    <h4>{{docente.lastName}}</h4>
     <h4>{{docente.email}}</h4>
 </div>
 
@@ -25,11 +25,22 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let doc of docentes">
+        @for (doc of docentesAPI; track doc.id) {
+        <tr>
             <td>{{doc.id}}</td>
             <td>{{doc.name}}</td>
-            <td>{{doc.lastname}}</td>
+            <td>{{doc.lastName}}</td>
             <td>{{doc.email}}</td>
         </tr>
+
+        }
     </tbody>
+    <!-- <tbody>
+        <tr *ngFor="let doc of docentesAPI">
+            <td>{{doc.id}}</td>
+            <td>{{doc.name}}</td>
+            <td>{{doc.lastName}}</td>
+            <td>{{doc.email}}</td>
+        </tr>
+    </tbody> -->
 </table>
