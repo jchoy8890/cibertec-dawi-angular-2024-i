@@ -1,0 +1,35 @@
+<h1>{{title}}</h1>
+<h3 *ngIf="flag">Powered by {{author}}</h3>
+<h3>{{flag}}</h3>
+<div *ngIf="frutas.length > 0">
+    <h2>Listado de Frutas</h2>
+    <ol>
+        <li *ngFor="let fruta of frutas"> {{fruta}}</li>
+    </ol>
+</div>
+
+<div *ngIf="docente !== null">
+    <h3>{{docente.id}}</h3>
+    <h4>{{docente.name}}</h4>
+    <h4>{{docente.lastname}}</h4>
+    <h4>{{docente.email}}</h4>
+</div>
+
+<table class="table table-borderless table-hover table-dark">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let doc of docentes">
+            <td>{{doc.id}}</td>
+            <td>{{doc.name}}</td>
+            <td>{{doc.lastname}}</td>
+            <td>{{doc.email}}</td>
+        </tr>
+    </tbody>
+</table>
