@@ -1,46 +1,8 @@
-<h1>{{title}}</h1>
-<h3 *ngIf="flag">Powered by {{author}}</h3>
-<h3>{{flag}}</h3>
-<div *ngIf="frutas.length > 0">
-    <h2>Listado de Frutas</h2>
-    <ol>
-        <li *ngFor="let fruta of frutas"> {{fruta}}</li>
-    </ol>
-</div>
-
-<div *ngIf="docente !== null">
-    <h3>{{docente.id}}</h3>
-    <h4>{{docente.name}}</h4>
-    <h4>{{docente.lastName}}</h4>
-    <h4>{{docente.email}}</h4>
-</div>
-
-<table class="table table-borderless table-hover table-dark">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Correo</th>
-        </tr>
-    </thead>
-    <tbody>
-        @for (doc of docentesAPI; track doc.id) {
-        <tr>
-            <td>{{doc.id}}</td>
-            <td>{{doc.name}}</td>
-            <td>{{doc.lastName}}</td>
-            <td>{{doc.email}}</td>
-        </tr>
-
-        }
-    </tbody>
-    <!-- <tbody>
-        <tr *ngFor="let doc of docentesAPI">
-            <td>{{doc.id}}</td>
-            <td>{{doc.name}}</td>
-            <td>{{doc.lastName}}</td>
-            <td>{{doc.email}}</td>
-        </tr>
-    </tbody> -->
-</table>
+<nav>
+    <a routerLink="/docentes">Docentes</a>
+    <br/>
+    <a routerLink="/testing">Testing</a>
+    <br/>
+    <a routerLink="/curso">Cursos</a>
+</nav>
+<router-outlet></router-outlet>

@@ -1,8 +1,8 @@
 export class Docente {
-    id: number;
-    name: string;
-    lastName: string;
-    email: string;
+    id: number = 0;
+    name: string = '';
+    lastName: string = '';
+    email: string = '';
 
     constructor(id: number, name: string, lastName: string, email: string) {
         this.id = id;
